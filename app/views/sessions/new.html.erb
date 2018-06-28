@@ -1,6 +1,2 @@
-<% if @user.name.nil?
-  <%= select_tag "user[user_id]") %>
-  <%= options_from_collection_for_select(User.all, :id, :name) %>
-<% else %>
-  <%= hidden_field_tag "user[user_id]", @user.user_id %>
-<% end %>
+  <%= label_tag(:name, "Your name:") %>
+  <%= collection_select(:user, :name, User.all, :name, :name) %>
