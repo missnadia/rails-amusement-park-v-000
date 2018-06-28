@@ -1,5 +1,5 @@
 <%= form_for @user, url: "/users/signin" do |f| %>
-  <%= f.collection_select(:id, @users, :id, :name) %>
+  <%= f.collection_select :user_name, @users, :id, :name) %>
 
   <%= f.submit "Sign In"  %>
   binding.pry
