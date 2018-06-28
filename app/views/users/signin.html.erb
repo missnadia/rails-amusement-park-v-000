@@ -1,6 +1,4 @@
 <%= form_for @user, url: "/users/signin" do |f| %>
-
-  <%= f.label :name, "Select your name" %><br>
   <%= f.collection_select(:id, @users, :id, :name) %>
 
   <%= f.submit "Sign In"  %>
