@@ -41,7 +41,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(
       :name,
       :password,
-      :password_confirmation,
       :nausea,
       :happiness,
       :tickets,
