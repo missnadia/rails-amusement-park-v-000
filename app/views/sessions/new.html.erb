@@ -1,2 +1,10 @@
-<%= label_tag(:name, "Your name:") %>
-<%= collection_select(:user, :name, User.all, :name, :name) %>
+<%= form_for @user, :url "/users/signin" do |f| %>
+
+  <%= f.label :name, "Select your name" %><br>
+  <%= f.collection_select(:id, @users, :id, :name) %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.submit "Sign In"  %>
+<% end %>
