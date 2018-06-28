@@ -1,4 +1,6 @@
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-  <input name="user_name" type="text" id="name">
-  <input type="submit" value='login'>
+<% if @user.name.nil?
+  <%= select_tag "user[user_id]") %>
+  <%= options_from_collection_for_select(User.all, :id, :name) %>
+<% else %>
+  <%= hidden_field_tag "user[user_id]", @user.user_id %>
 <% end %>
