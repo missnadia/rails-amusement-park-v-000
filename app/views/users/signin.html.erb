@@ -1,9 +1,10 @@
-<%= form_for @user, :url => url_for(:controller => 'users', :action => 'create') do |f| %>
-  <%= f.label :name, "Select your name" %><br>
-  <%= f.text_field :name %>
+<%= form_for @user, url: "/users/login" do |f| %>
 
-  <%= f.label :password, "Enter your password" %><br>
-  <%= f.password_field :password %>
+  <div class="field"><%= f.label :name, "Select your name" %><br>
+    <%= f.collection_select(:id, @users, :id, :name) %>
+  </div>
 
-  <%= f.submit "Sign In" %>
+  <div class="actions">
+    <%= f.submit "Sign In"  %>
+  </div>
 <% end %>
